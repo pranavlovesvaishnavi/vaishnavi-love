@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Pixelify sans", sans-serif;
+
+    background:
+        radial-gradient(circle at top left, #fff0f6, transparent 35%),
+        radial-gradient(circle at bottom right, #ffc1d9, transparent 40%),
+        linear-gradient(135deg, #ffd6e7, #ffb6d5);
+
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+
+/* =========================
+   SCREENS
+========================= */
+
+.screen {
+    display: none;
+
+    width: 100%;
+    height: 100vh;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    position: relative;
+
+    padding: 20px;
+}
+
+
+/* VERY IMPORTANT */
+.screen.active {
+    display: flex;
+}
+
+
+/* =========================
+   HEARTS
+========================= */
+
+.heart {
+    position: absolute;
+
+    font-size: 30px;
+
+    animation: floatHeart 4s infinite ease-in-out;
+
+    pointer-events: none;
+}
+
+.heart1 {
+    top: 10%;
+    left: 10%;
+}
+
+.heart2 {
+    top: 20%;
+    right: 12%;
+
+    animation-delay: 1s;
+}
+
+.heart3 {
+    bottom: 15%;
+    left: 15%;
+
+    animation-delay: 2s;
+}
+
+.heart4 {
+    bottom: 20%;
+    right: 15%;
+
+    animation-delay: 3s;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+h1 {
+    color: #a61e55;
+
+    font-size: clamp(28px, 6vw, 48px);
+
+    line-height: 1.4;
+
+    margin: 15px 0;
+}
+
+p {
+    color: #7d2348;
+
+    font-size: 22px;
+
+    margin: 10px 0 25px;
+}
+
+
+/* =========================
+   SCREEN 1
+========================= */
+
+.envelope {
+    font-size: 130px;
+
+    animation: envelopeMove 1.5s infinite alternate;
+}
+
+@keyframes envelopeMove {
+
+    from {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    to {
+        transform: translateY(-12px) rotate(3deg);
+    }
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    border: none;
+
+    padding: 14px 32px;
+
+    border-radius: 30px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+#openBtn,
+#yesBtn {
+    background: #e83e79;
+
+    color: white;
+
+    box-shadow: 0 6px 18px rgba(200, 40, 100, 0.3);
+}
+
+#openBtn:hover,
+#yesBtn:hover {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   SCREEN 2
+========================= */
+
+.letter-window {
+    width: min(850px, 90%);
+
+    padding: 45px 25px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    box-shadow: 0 15px 40px rgba(150, 40, 90, 0.2);
+
+    backdrop-filter: blur(8px);
+}
+
+.letter-window h1 {
+    font-size: clamp(24px, 5vw, 42px);
+}
+
+.buttons {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 30px;
+
+    margin-top: 35px;
+}
+
+#noBtn {
+    background: white;
+
+    color: #c2185b;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   SCREEN 3
+========================= */
+
+#screen3 {
+    background:
+        radial-gradient(circle at center, #ffeaf3, #ffc1d9, #ff9fc5);
+}
+
+.dancing-cat {
+    width: 280px;
+
+    max-width: 70vw;
+
+    max-height: 45vh;
+
+    object-fit: contain;
+
+    margin-bottom: 15px;
+}
+
+.final-message {
+    font-size: clamp(25px, 5vw, 40px);
+
+    font-weight: bold;
+
+    color: #a61e55;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .letter-window {
+        padding: 30px 15px;
+    }
+
+    .buttons {
+        gap: 15px;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 18px;
+    }
+
+    .dancing-cat {
+        width: 220px;
+    }
+}
